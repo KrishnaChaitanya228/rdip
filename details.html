@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+    <style>
+    	img {
+			  height: 80px;
+			  width:130px;
+			  margin: auto;
+			  background-attachment: scroll;
+			}
+		.topleft{
+				position: absolute;
+				top: 30px;
+				left: 16px;
+				font-size: 18px;
+			}
+		.topright{
+			position: absolute;
+			top:30px;
+			right:40px;
+			font-size: 32px;
+			font-family: serif;
+		}
+		.topnav {
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+		.topnav a {
+			  float: left;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  font-size: 17px;
+			}
+    </style>
+
+</head>
+<body>
+	<div class="topleft">
+		<a href="https://www.iiit.ac.in/"><img src="C://Users/palva/OneDrive/Desktop/iiit-newlogo.png" alt="IIIT HYDERABAD"></a>
+	</div>
+	<div class="topright"><a href="https://serc.iiit.ac.in/rdip">RDIP</div>
+	<br><br><br><br><br><br><br>
+	<div class="topnav">
+		<a class="active" href="homepage.html">Home</a>
+		<a href="registration.html">Registration Form</a>
+	</div>
+	<br><br><br>
+</body>
+<script>
+            function getParams(){
+                var idx = document.URL.indexOf('?');
+                var params = new Array();
+                if (idx != -1) {
+                    var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+                    for (var i=0; i<pairs.length; i++){
+                        nameVal = pairs[i].split('=');
+                        params[nameVal[0]] = nameVal[1];
+                    }
+                }
+                return params;
+            }
+            params = getParams();
+            firstname = unescape(params["f_name"]);
+            email = unescape(params["email"]);
+            clg=unescape(params["clg"]);
+            gender=unescape(params["gender"]);
+            reason=unescape(params["reason"]);
+            phoneNumber = unescape(params["ph_num"]);
+            document.write("<table padding=15px>");
+            document.write("<tr><td>First Name</td><td>"+":"+ firstname + "</td></tr>");
+            document.write("<tr><td>Email</td><td>"+":"+ email+ "</td></tr>");
+            document.write("<tr><td>Phone No</td><td>"+":"+phoneNumber+"</td></tr>");
+          	document.write("<tr><td>Gender</td><td>"+":"+gender+"</td></tr>");
+          	document.write("<tr><td>Reason</td><td>"+":"+reason+"</td></tr>");
+          	document.write("<tr><td>College</td><td>"+":"+clg+"</td></tr></table>");
+    </script>
+</html>
